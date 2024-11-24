@@ -52,4 +52,14 @@ router.delete('/users/:id', async (req: Request, res: Response): Promise<any> =>
   }
 });
 
+router.get('/users', async (req: Request, res: Response): Promise<any> => {
+
+  try {
+
+    const users = await userRepository.find();
+    return res.status(200).json(users);
+  } catch (error) {
+    return res.status(500).json({ message: 'Error deleting user', error });
+  }
+});
 export default router;
