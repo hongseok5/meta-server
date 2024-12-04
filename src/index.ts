@@ -3,6 +3,7 @@ import userRoutes from './routes/userRoutes';
 import commonRoutes from './routes/commonRoutes';
 import matchRouter from './routes/matchRouter';
 import teamRouter from './routes/teamRouter';
+import authRouter from './routes/authRoutes';
 import { AppDataSource } from './data-source';
 import cors from 'cors';
 import 'reflect-metadata';
@@ -26,8 +27,9 @@ AppDataSource.initialize()
     app.use('/common', commonRoutes);
     app.use('/match', matchRouter);
     app.use('/team', teamRouter);
+    app.use('/auth', authRouter);
     app.listen(port, () => {
       console.log(`Server is running at http://localhost:${port}`);
     });
   })
-  .catch((error) => console.log('Database connection error: ', error));
+  .catch((error: Error) => console.log('Database connection error: ', error));

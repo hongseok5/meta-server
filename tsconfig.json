@@ -1,7 +1,6 @@
 {
     "compilerOptions": {
       "target": "ES6",
-      "module": "commonjs",
       "strict": true,
       "esModuleInterop": true,
       "skipLibCheck": true,
@@ -9,7 +8,9 @@
       "outDir": "./dist",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "strictPropertyInitialization": false
+      "strictPropertyInitialization": false,
+      "types": ["node"],  // 기존 types가 있을 경우
+      "typeRoots": ["./node_modules/@types", "./src/types"]
     },
     "include": ["src/**/*.ts"],
     "exclude": ["node_modules"]

@@ -5,7 +5,7 @@ import {Game} from '../entity/Game';
 import {Team} from '../entity/Team';
 
 export const getMatches = async (req: Request, res: Response) => {
-  console.log(req.body)
+  console.log("matchRouter getMatches")
   const home_team_id = req.body.homeTeamId || 1
   const result = await AppDataSource
     .createQueryBuilder()
